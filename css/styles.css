@@ -401,8 +401,19 @@ Featured Tours
 }
 
 .tour-title {
-  text-transform: uppercase;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.tour-title h4,
+.tour-title p {
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+.tour-title p {
+  color: var(--clr-grey-7);
 }
 
 .tour-text {
