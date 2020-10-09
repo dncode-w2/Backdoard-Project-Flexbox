@@ -536,9 +536,104 @@ Contact
 Gallery
 ===============
 */
+.gallery-image-container {
+  position: relative;
+  background: var(--clr-primary-5);
+  margin: 0.125rem;
+}
+
+.gallery-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: tranlsate(-50%, -50%);
+  font-size: 2rem;
+  color: var(--clr-white);
+  opacity: 0;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.gallery-img {
+  height: 17rem;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+/* hover */
+.gallery-image-container:hover .gallery-img {
+  opacity: 0.5;
+}
+
+.gallery-image-container:hover .gallery-icon {
+  opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .gallery-center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .gallery-image-container {
+    flex: 1 1 50%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .gallery-image-container {
+    flex: 1 1 25%;
+  }
+}
 
 /*
 =============== 
 Footer
 ===============
-*/ ;
+*/
+
+.footer {
+  background: var(--clr-grey-1);
+  text-align: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.footer-links,
+.footer-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.footer-link {
+  color: var(--clr-white);
+  text-transform: capitalize;
+  font-size: 1rem;
+  margin-right: 1rem;
+  letter-spacing: var(--spacing);
+  transition: var(--transition);
+}
+
+.footer-link:hover {
+  color: var(--clr-primary-5);
+}
+
+.footer-icon {
+  font-size: 2rem;
+  margin-right: 1rem;
+  color: var(--clr-primary-8);
+  transition: var(--transition);
+}
+
+.footer-icon:hover {
+  color: var(--clr-primary-5);
+}
+
+.copyright {
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  color: var(--clr-white);
+}
