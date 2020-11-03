@@ -345,6 +345,8 @@ Services
   }
   .service {
     flex: 0 0 calc(50% - 1rem);
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -352,6 +354,7 @@ Services
 @media screen and (min-width: 992px) {
   .service {
     flex: 0 0 calc(33.3% - 1rem);
+    margin: 0;
   }
 }
 
@@ -359,12 +362,13 @@ Services
   .service {
     display: flex; /*strech*/
     text-align: left;
+    margin: 0;
   }
-  .service-icon {
-    align-self: center; /*not strech again*/
+  .service-icons {
+    align-self: flex-start;
   }
   .service-info {
-    margin-left: 1.2rem;
+    margin-left: 1rem;
   }
 }
 /*
@@ -372,6 +376,96 @@ Services
 Featured Tours
 ===============
 */
+.tour-card {
+  /* beri jarak setiap card */
+  margin-bottom: 2rem;
+  box-shadow: var(--light-shadow);
+  transition: var(--transition);
+  /* beri background pada card */
+  background: var(--clr-grey-10);
+}
+
+/* if clicked will get effect */
+.tour-card:hover {
+  box-shadow: var(--dark-shadow);
+  transform: scale(1.025);
+}
+
+/* masukan date ke image */
+.image-tour-container {
+  position: relative;
+}
+
+.tour-date {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: var(--clr-primary-5);
+  color: var(--clr-primary-1);
+  padding: 0.35rem 1.1rem;
+  text-transform: capitalize;
+  margin-bottom: 0;
+}
+
+/* beri jarak top/bottom, left/right pada tour-info */
+.tour-info {
+  padding: 1.2rem 1.5rem;
+}
+
+.tour-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.tour-footer p {
+  /* cz p 1.25 , and line-height is 1.5 */
+  margin-bottom: 0;
+  line-height: 0;
+  text-transform: capitalize;
+  color: var(--clr-primary-5);
+}
+
+.tour-title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.tour-title h4 {
+  font-weight: bold;
+}
+
+.tour-title p,
+.tour-title h4 {
+  /* here margin-bottom h4 still 12, and p 20
+we can overide it
+*/
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+
+.tour-title p {
+  color: var(--clr-grey-7);
+}
+
+/* if 768px 2 column & if 992px 3 column */
+@media screen and (min-width: 768px) {
+  .tours-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .tour-card {
+    flex: 0 0 calc(50% - 1rem);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .tour-card {
+    flex: 0 0 calc(33.3% - 1rem);
+  }
+}
 
 /*
 =============== 
