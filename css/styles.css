@@ -318,7 +318,6 @@ Services
 
 .service {
   text-align: center;
-  /* add margin-bottom for each service */
   margin-bottom: 2rem;
 }
 
@@ -327,24 +326,45 @@ Services
   background: var(--clr-primary-5);
   color: var(--clr-primary-1);
   padding: 0.5rem;
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
+  font-size: 3rem;
+  margin-bottom: 1.25rem;
 }
 
 .service-info p {
-  width: 20rem;
+  width: 17rem;
   margin-left: auto;
   margin-right: auto;
 }
 
-@media screen and (min-width: 567px) {
-  .service-center {
+/* if 576px will create 2 column */
+@media screen and (min-width: 576px) {
+  .flex_service {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
   .service {
     flex: 0 0 calc(50% - 1rem);
+  }
+}
+
+/* if 992px will create 3 coloumn */
+@media screen and (min-width: 992px) {
+  .service {
+    flex: 0 0 calc(33.3% - 1rem);
+  }
+}
+
+@media screen and (min-width: 1170px) {
+  .service {
+    display: flex; /*strech*/
+    text-align: left;
+  }
+  .service-icon {
+    align-self: center; /*not strech again*/
+  }
+  .service-info {
+    margin-left: 1.2rem;
   }
 }
 /*
