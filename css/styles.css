@@ -147,6 +147,40 @@ p {
   background: var(--clr-primary-8);
 }
 
+/* section tuk pemisah antar section top/bottom */
+.section {
+  padding: 5rem 0;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title h2 {
+  text-transform: uppercase;
+}
+
+.title span {
+  color: var(--clr-primary-5);
+}
+
+/* section-center for setting width  */
+.section-center {
+  /* default on me 1354px full browser
+  and be changed 1294*/
+  width: 90vw;
+  margin: 0 auto;
+  /* dan maximalnya adalah 1170px */
+  max-width: 1170px;
+}
+
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95vw;
+  }
+}
+
 /*
 =============== 
 Navbar
@@ -228,6 +262,48 @@ About
 /* section add to globals */
 /* title add to globals */
 /* section center add to globals */
+.about-image,
+.about-info {
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .about-center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .about-image,
+  .about-info {
+    /* 2 column basis will 50% */
+    flex: 0 0 calc(50% - 1rem);
+    align-self: center;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .about-image::before {
+    /* dont forget always2 use content */
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 3px solid var(--clr-primary-5);
+    box-sizing: border-box;
+    top: -1rem;
+    left: -1rem;
+    /* z-index:-1; */
+  }
+  .about-image {
+    position: relative;
+  }
+
+  /* z-index -1 on before  can but,u can use this one */
+  .about-photo {
+    position: relative;
+  }
+}
 
 /*
 =============== 
