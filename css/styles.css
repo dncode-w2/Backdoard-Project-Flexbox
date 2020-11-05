@@ -519,6 +519,72 @@ we can overide it*/
 Contact
 ===============
 */
+/* add background */
+.contact {
+  background: var(--clr-primary-5);
+}
+
+.contact-title {
+  color: var(--clr-white);
+}
+
+.contact-title p {
+  color: var(--clr-white);
+}
+
+/* contact-form will flex */
+.contact-form {
+  display: flex;
+  max-width: 100%;
+}
+/*  children dont forget */
+.form-control {
+  flex: 1 1 auto;
+  color: var(--clr-primary-1);
+}
+
+/* sejajarkan tuk input & button */
+.form-control,
+.btn-submit {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 300;
+  letter-spacing: var(--spacing);
+  background: var(--clr-white);
+  text-transform: capitalize;
+  border: transparent;
+  color: inherit;
+}
+
+.form-control::placeholder {
+  color: inherit;
+}
+
+.btn-submit {
+  margin-left: 0.5rem;
+  background: var(--clr-primary-8);
+}
+
+.btn-submit:hover {
+  background: var(--clr-primary-1);
+  color: var(--clr-primary-8);
+}
+
+/* buat smua children menjadi bersebrangan */
+@media screen and (min-width: 992px) {
+  .contact-center {
+    /*will strech all children cz contact-form flex*/
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .contact-form {
+    /* here not strech again */
+    align-self: flex-start;
+    flex: 1 1 auto;
+    padding-left: 2rem;
+  }
+}
 
 /*
 =============== 
