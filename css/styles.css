@@ -147,7 +147,8 @@ p {
   background: var(--clr-primary-8);
 }
 
-/* section tuk pemisah antar section top/bottom */
+/* section tuk pemisah antar section 
+top/bottom : 80px */
 .section {
   padding: 5rem 0;
 }
@@ -226,6 +227,7 @@ Hero
 }
 
 .hero-btn {
+  /* 14px 25px */
   padding: 0.9rem 1.6rem;
   font-size: 1.25rem;
   background: var(--clr-white);
@@ -236,6 +238,7 @@ Hero
 .hero-btn:hover {
   background: transparent;
   color: var(--clr-white);
+  /* cz border: 2px solid transparent */
   border-color: var(--clr-white);
 }
 
@@ -246,6 +249,7 @@ Hero
       url('../images/main.jpeg') no-repeat center/cover fixed;
   }
   .hero-banner {
+    /* cz sblumnya padding 0 3rem */
     padding: 0;
   }
   .hero-banner p {
@@ -262,11 +266,15 @@ About
 /* section add to globals */
 /* title add to globals */
 /* section center add to globals */
+
+/* beri jarak pemisah antar article about-image,
+dan about-info */
 .about-image,
 .about-info {
   margin-bottom: 2rem;
 }
 
+/* if 768px will be 2 column */
 @media screen and (min-width: 768px) {
   .about-center {
     display: flex;
@@ -278,10 +286,14 @@ About
     /* 2 column basis will 50% */
     flex: 0 0 calc(50% - 1rem);
     align-self: center;
+    /* krna 2 column kesamping margin-bottom di null kan
+    krna sblumnya margin-bottom : 2rem
+    */
     margin-bottom: 0;
   }
 }
 
+/* beri border tuk about-image */
 @media screen and (min-width: 992px) {
   .about-image::before {
     /* dont forget always2 use content */
@@ -290,6 +302,7 @@ About
     width: 100%;
     height: 100%;
     border: 3px solid var(--clr-primary-5);
+    /* jika posisi box tidak sama gunakan border-box */
     box-sizing: border-box;
     top: -1rem;
     left: -1rem;
@@ -312,33 +325,45 @@ Services
 */
 
 /* add background here */
+
+/* beri background ksluruhan pada section service */
 .services {
   background: var(--clr-primary-10);
 }
 
+/* masing2 article service posisikan ke center dahulu
+dan beri jarak pemisah 
+*/
 .service {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .service-icon {
+  /* dont forget about always2 inline-block
+  agar margin-bottom bisa digunakan */
   display: inline-block;
   background: var(--clr-primary-5);
   color: var(--clr-primary-1);
   padding: 0.5rem;
+  /* ukuran icons */
   font-size: 3rem;
+  /* beri jarak pemisah agar tidak trlalu dkt dgn h4 */
   margin-bottom: 1.25rem;
 }
 
 .service-info p {
+  /* set to width biar tidak spanning text nya */
   width: 17rem;
+  /* posisikan ke tengah & jgn gunakan margin:0 auto 
+  krna margin-bottom p 1.25rem*/
   margin-left: auto;
   margin-right: auto;
 }
 
 /* if 576px will create 2 column */
 @media screen and (min-width: 576px) {
-  .flex_service {
+  .service_center {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -354,18 +379,21 @@ Services
 @media screen and (min-width: 992px) {
   .service {
     flex: 0 0 calc(33.3% - 1rem);
+    /* set margin:0 agar tidak d tengah cz sblumnya
+    margin left/auto di tengah pada 576px */
     margin: 0;
   }
 }
 
 @media screen and (min-width: 1170px) {
   .service {
-    display: flex; /*strech*/
+    display: flex; /*will strech*/
     text-align: left;
     margin: 0;
   }
-  .service-icons {
-    align-self: flex-start;
+  .service-icon {
+    align-self: flex-start; /*not strech again */
+    padding: 1.2rem 1.5rem;
   }
   .service-info {
     margin-left: 1rem;
@@ -402,21 +430,45 @@ Featured Tours
   bottom: 0;
   background: var(--clr-primary-5);
   color: var(--clr-primary-1);
+  /* 5px 17px */
   padding: 0.35rem 1.1rem;
   text-transform: capitalize;
+  /* set ke 0 krna p margin-bottom 1.25rem */
   margin-bottom: 0;
 }
 
 /* beri jarak top/bottom, left/right pada tour-info */
 .tour-info {
+  /* 19.2px & 24px */
   padding: 1.2rem 1.5rem;
 }
 
+/* jadikan posisi nya bersebrangan tuk kedua class ini*/
+.tour-title,
 .tour-footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+/* set for tour-title */
+.tour-title h4 {
+  font-weight: 700;
+}
+
+.tour-title p {
+  color: var(--clr-grey-7);
+}
+
+.tour-title p,
+.tour-title h4 {
+  /* here margin-bottom h4 still 12, and p 20
+we can overide it*/
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+
+/* set for tour-title */
 
 .tour-footer p {
   /* cz p 1.25 , and line-height is 1.5 */
@@ -426,32 +478,27 @@ Featured Tours
   color: var(--clr-primary-5);
 }
 
-.tour-title {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+/* set height image agar smua dalam card gambar sama rata */
+.image-tour-container img {
+  /* 272px */
+  height: 17rem;
+  object-fit: cover;
 }
 
-.tour-title h4 {
-  font-weight: bold;
+/* add btn all explore */
+.btn-explore {
+  text-align: center;
 }
 
-.tour-title p,
-.tour-title h4 {
-  /* here margin-bottom h4 still 12, and p 20
-we can overide it
-*/
-  margin-bottom: 0.75rem;
-  line-height: 1.25;
-}
-
-.tour-title p {
-  color: var(--clr-grey-7);
+.btn-explore .btn {
+  font-size: 1.25rem;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1.25rem;
 }
 
 /* if 768px 2 column & if 992px 3 column */
 @media screen and (min-width: 768px) {
-  .tours-flex {
+  .tour-center {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
